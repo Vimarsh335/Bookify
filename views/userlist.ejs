@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fetch using MySQL and Node.js</title>
+</head>
+<body>
+    <div class="container" id="table">
+        <table class="table" id="for_book">
+            <thead>
+              <tr>
+                <th scope="col">S.N</th>
+                <th scope="col">Isbn</th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Author</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Condition</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%if (userData.length!=0){
+                var i=1;
+                userData.forEach(function(rows){
+                  %>
+              <tr>
+                <th scope="row"><%=i; %></th>
+                <td ><%=rows.ISBN %></td>
+                <td><%=rows.id %></td>
+                <td ><%=rows.Name %></td>
+                <td><%=rows.Author %></td>
+                <td><%=rows.Genre %></td>
+                <td ><%=rows.Publisher %></td>
+                <td><%=rows.Factory %></td>
+                <td ><%=rows.Quantity %></td>
+                <td><%=rows.Price %></td>
+              </tr>
+              <%  i++; }) %>
+              <% } else{ %>
+                  <tr>
+                      <td colspan="7">No Data Found</td>
+                  </tr>
+              <% } %>
+          </table>
+          </div>
+</body>
+</html>

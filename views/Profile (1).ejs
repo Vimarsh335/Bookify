@@ -1,0 +1,103 @@
+<%- include('../views/header.ejs'); %>
+<%- include('../views/sidenav.ejs'); %>
+<link rel="stylesheet" href="./static/wishlist.css">
+<link rel="stylesheet" href="./static/bootstrap.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="./static/register.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<!-- Page Content  -->
+<div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                  <i class="fa fa-bars"></i>
+                  <span class="sr-only">Toggle Menu</span>
+                </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="brand">
+                    <ul class="navbar-nav ml-auto">
+                        <li><a class="navbar-brand" href="/">Bookify</a></li>
+
+                        <li class="nav-item">
+                            <form class="form-inline" id="nav-form">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="input_bar">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="nav-src-btn">Search</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/cart"><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                    </svg></span> Cart </a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout?_method=DELETE" method="POST" id="logout">
+                            <a class="nav-link" href="javascript:{}" onclick="document.getElementById('logout').submit(); return false;">Logout</a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container">
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <form action="/edit_profile" method="POST">
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input class="form-control mr-sm-6" placeholder="First Name" type="text" name="first_name">
+                    <input class="form-control mr-sm-6" placeholder="Last Name" type="text" name="last_name">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-calendar" aria-hidden="true"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Date Of Birth" type="date" name="dob">
+                </div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-home" aria-hidden="true"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Address" type="text" name="address">
+                </div>
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-home" aria-hidden="true"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="City" name="city" type="text">
+                    <input class="form-control" placeholder="Zip" name="zip" type="text">
+                </div>
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Phone number" name="contact" type="text">
+                </div> <!-- form-group// -->
+        
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block"> Save Changes </button>
+                </div> <!-- form-group// -->
+            </form>
+        </article>
+    </div> <!-- card.// -->
+
+</div>
+</div>
+</div>
+<%- include('../views/footer.ejs'); %>

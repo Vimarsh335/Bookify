@@ -1,0 +1,114 @@
+<%- include('../views/header.ejs'); %>
+<%- include('../views/sidenav.ejs'); %>
+<link rel="stylesheet" href="./css/wishlist.css">
+<div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                  <i class="fa fa-bars"></i>
+                  <span class="sr-only">Toggle Menu</span>
+                </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="brand">
+                    <ul class="navbar-nav ml-auto">
+                        <li><a class="navbar-brand" href="/">Bookify</a></li>
+
+                        <li class="nav-item">
+                            <form class="form-inline" id="nav-form">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="input_bar">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="nav-src-btn">Search</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/cart"><span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                    </svg></span> Cart </a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout?_method=DELETE" method="POST" id="logout">
+                            <a class="nav-link" href="javascript:{}" onclick="document.getElementById('logout').submit(); return false;">Logout</a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="col-lg-8">
+        <div class="padding-top-2x mt-2 hidden-lg-up"></div>
+        <!-- Wishlist Table-->
+        <div class="table-responsive wishlist-table margin-bottom-none">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th class="text-center"><a class="btn btn-sm btn-outline-danger" href="#">Clear Wishlist</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="product-item">
+                                <a class="product-thumb" href="#"><img src="https://via.placeholder.com/220x180/FF0000/000000" alt="Product"></a>
+                                <div class="product-info">
+                                    <h4 class="product-title"><a href="#">Unionbay Park</a></h4>
+                                    <div class="text-lg text-medium text-muted">$43.90</div>
+                                    <div>Availability:
+                                        <div class="d-inline text-success">In Stock</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center"><a class="remove-from-cart" href="#" data-toggle="tooltip" title="" data-original-title="Remove item"><i class="icon-cross"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-item">
+                                <a class="product-thumb" href="#"><img src="https://via.placeholder.com/220x180/87CEFA/000000" alt="Product"></a>
+                                <div class="product-info">
+                                    <h4 class="product-title"><a href="#">Daily Fabric Cap</a></h4>
+                                    <div class="text-lg text-medium text-muted">$24.70</div>
+                                    <div>Availability:
+                                        <div class="d-inline text-warning">2 - 3 Weeks</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center"><a class="remove-from-cart" href="#" data-toggle="tooltip" title="" data-original-title="Remove item"><i class="icon-cross"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="product-item">
+                                <a class="product-thumb" href="#"><img src="https://via.placeholder.com/220x180/483D8B/000000" alt="Product"></a>
+                                <div class="product-info">
+                                    <h4 class="product-title"><a href="#">Cole Haan Crossbody</a></h4>
+                                    <div class="text-lg text-medium text-muted">$200.00</div>
+                                    <div>Availability:
+                                        <div class="d-inline text-success">In Stock</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center"><a class="remove-from-cart" href="#" data-toggle="tooltip" title="" data-original-title="Remove item"><i class="icon-cross"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr class="mb-4">
+        <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" id="inform_me" checked="">
+            <label class="custom-control-label" for="inform_me">Inform me when item from my wishlist is available</label>
+        </div>
+    </div>
+</div>
+</div>
+
+        

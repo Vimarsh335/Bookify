@@ -1,0 +1,52 @@
+body {
+	background: url(bg.jpg);
+	background-size: cover;
+	background-position: center;
+	color: white;
+}
+html {
+	height: 100%;
+}
+h1 {
+	font-weight: 700;
+	font-size: 5em;
+}
+.jumbotron {
+	padding: 1em 1em;
+	width: 40%;
+	margin-top: 15%;
+	margin-left: 62%;
+	background: none;
+	border-color:  #282C35;
+	border-style: solid;
+	border-radius: 30%;
+	border-width: 6px;
+}
+.row {
+	display: flex;
+	justify-content: center;
+}
+#username {
+	border: 2px solid black;
+}
+#password {
+	border: 2px solid black;
+}
+#bookify {
+	font-family:  'Pacifico';
+	text-align: center;
+	color: black;
+	font-size : 80px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 40%;
+}
+#btn {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+}
